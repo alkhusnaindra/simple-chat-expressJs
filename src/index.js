@@ -87,6 +87,16 @@ io.on("connection", (socket) => {
 app.post("/api/register", async (req, res) => {
   try {
     const { username, password } = req.body;
+
+    // Check if username already exists
+    const existingUser = await prisma.user.findUnique({
+      where: { username },
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ error: "Username already taken" });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await prisma.user.create({
@@ -95,11 +105,6 @@ app.post("/api/register", async (req, res) => {
         password: hashedPassword,
       },
     });
-
-    const existingUser = await prisma.user.findUnique({ where: { username } });
-    if (existingUser) {
-      return res.status(400).json({ error: "Username already taken" });
-    }
 
     res.json({ message: "User created successfully" });
   } catch (error) {
