@@ -5,7 +5,6 @@ A simple **real-time chat application** built with **Express.js** and **Prisma O
 ## Features 🚀
 
 - **User Authentication**: Register and log in with JWT tokens 🔑.
-- **Real-time Messaging**: Chat with others in real-time using Supabase Realtime ⚡.
 - **Message History**: View and store all your messages 📝.
 - **Simple Setup**: Quick and easy to get started with just a few commands ⚙️.
 
@@ -14,7 +13,6 @@ A simple **real-time chat application** built with **Express.js** and **Prisma O
 - **Backend**: Express.js
 - **Database**: SQLite with Prisma ORM
 - **Authentication**: JWT (JSON Web Token) 🔒
-- **Real-time Communication**: supabase realtime 🌐
 - **Database Management**: Prisma ORM 🗃️
 
 ## Requirements ⚙️
