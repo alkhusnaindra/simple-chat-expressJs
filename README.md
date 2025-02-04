@@ -64,7 +64,7 @@ Before you run the project, make sure you have the following installed:
 6. **Start the Server**:
 
     ```bash
-    npm start
+    npm run dev
     ```
 
 Your server will now be running at `http://localhost:3000` 🎉.
