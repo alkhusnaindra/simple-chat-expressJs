@@ -53,14 +53,22 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", async ({ senderId, receiverId, content }) => {
     try {
+      console.log(
+        `Received message from ${senderId} to ${receiverId}: ${content}`
+      );
+
       const message = await prisma.message.create({
         data: { senderId, receiverId, content },
       });
 
-      // Kirim ke penerima jika online
       const receiverSocketId = usersOnline.get(receiverId);
+      console.log(`Receiver Socket ID: ${receiverSocketId}`);
+
       if (receiverSocketId) {
         io.to(receiverSocketId).emit("receiveMessage", message);
+        console.log(`Message sent to receiver: ${receiverSocketId}`);
+      } else {
+        console.log(`Receiver ${receiverId} is offline.`);
       }
     } catch (error) {
       console.error("Error sending message:", error);
