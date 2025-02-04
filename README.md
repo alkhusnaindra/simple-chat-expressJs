@@ -5,7 +5,7 @@ A simple **real-time chat application** built with **Express.js** and **Prisma O
 ## Features 🚀
 
 - **User Authentication**: Register and log in with JWT tokens 🔑.
-- **Real-time Messaging**: Chat with others in real-time using WebSocket (Socket.io) ⚡.
+- **Real-time Messaging**: Chat with others in real-time using Supabase Realtime ⚡.
 - **Message History**: View and store all your messages 📝.
 - **Simple Setup**: Quick and easy to get started with just a few commands ⚙️.
 
@@ -14,7 +14,7 @@ A simple **real-time chat application** built with **Express.js** and **Prisma O
 - **Backend**: Express.js
 - **Database**: SQLite with Prisma ORM
 - **Authentication**: JWT (JSON Web Token) 🔒
-- **Real-time Communication**: Socket.io 🌐
+- **Real-time Communication**: supabase realtime 🌐
 - **Database Management**: Prisma ORM 🗃️
 
 ## Requirements ⚙️
@@ -29,7 +29,7 @@ Before you run the project, make sure you have the following installed:
 1. **Clone the Repository**:
 
     ```bash
-    git clone https://github.com/username/simple-chat.git
+    git clone git@github.com:alkhusnaindra/simple-chat-expressJs.git
     ```
 
 2. **Navigate to the Project Folder**:
